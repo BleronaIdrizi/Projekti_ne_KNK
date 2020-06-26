@@ -46,3 +46,14 @@ public class Admin extends Application {
 		this.ProfEmri = rezultati;
 	}
 	
+public void showNota() {
+		ArrayList<DataAdmin> dataAdmin = DataAdmin.getDataAdmin(ProfEmri);
+		
+		ObservableList<DataAdmin> dataAdminList = FXCollections.observableArrayList();
+		
+		for(int i = 0; i < dataAdmin.size(); i++) {
+			dataAdminList.add(dataAdmin.get(i));
+		}
+		
+		tabela.setItems(dataAdminList);
+	}

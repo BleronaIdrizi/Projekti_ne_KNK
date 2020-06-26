@@ -57,3 +57,46 @@ public void showNota() {
 		
 		tabela.setItems(dataAdminList);
 	}
+@Override
+	public void start(Stage primaryStage) throws Exception {
+		MenuBar menubar = new MenuBar();
+		Menu file = new Menu("File");
+		MenuItem exit = new MenuItem("Exit");
+		exit.setAccelerator(KeyCombination.keyCombination("Ctrl+X"));
+		exit.setOnAction(e->{
+			System.exit(0);
+		});
+		file.getItems().add(exit);
+		menubar.getMenus().add(file);
+		
+		GridPane gridpane = new GridPane();
+		
+		gridpane.addRow(0, ID, id);
+		gridpane.addRow(1, Lenda, lenda);
+		gridpane.addRow(2, ects, ECTS);
+		gridpane.addRow(3, Nota, nota);
+		
+		Button btnDelete = new Button("Delete");
+		btnDelete.setOnAction(e->{
+			if(DataAdmin.deleteNota(id.getText(), lenda.getText())) {
+				showNota();
+			}
+		});
+		
+		Button btnClear = new Button("Clear All");
+		btnClear.setOnAction(e->{
+			id.clear();
+			ECTS.clear();
+			lenda.clear();
+			nota.clear();
+		});
+		Button btnUpdate = new Button("PUSH");
+		btnUpdate.setOnAction(e->{
+			try 
+			{
+				String query = "SELECT * FROM Notat WHERE Stud_ID = ? AND Lenda = ?";
+				PreparedStatement preparedStatement = Databaza.getConnection().prepareStatement(query);
+				preparedStatement.setString(1, id.getText());
+				preparedStatement.setString(2, lenda.getText());
+
+				ResultSet result = preparedStatement.executeQuery();

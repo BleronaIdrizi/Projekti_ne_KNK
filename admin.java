@@ -28,3 +28,21 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+public class Admin extends Application {
+	private Label ID = new Label("ID:");
+	private TextField id = new TextField();
+	private Label Lenda = new Label("Lenda:");
+	private TextField lenda = new TextField();
+	private Label Nota = new Label("Nota:");
+	private TextField nota = new TextField();
+	private Label ects = new Label("ECTS:");
+	private TextField ECTS = new TextField();
+	
+	private TableView tabela = new TableView();
+	
+	String ProfEmri;
+	
+	public Admin(String rezultati) {
+		this.ProfEmri = rezultati;
+	}
+	

@@ -178,4 +178,25 @@ public void showNota() {
 			dataAdminList.add(dataAdmin.get(i));
 		}
 		tabela.setItems(dataAdminList);
+		
+		VBox menupane = new VBox();
+		HBox pane = new HBox(20);
+		
+		pane.getChildren().addAll(gridpane, tabela);
+		pane.setPadding(new Insets(15, 15, 15 ,15));
+		
+		menupane.getChildren().addAll(menubar, pane);
+		
+		Scene scene = new Scene(menupane);
+		
+		primaryStage.setTitle("SEMD");
+		primaryStage.setResizable(false);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
+}
+
 	

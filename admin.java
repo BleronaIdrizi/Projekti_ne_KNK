@@ -159,4 +159,23 @@ public void showNota() {
 		TableColumn<String, Data> column4 = new TableColumn<>("Nota");
 		column4.setCellValueFactory(new PropertyValueFactory("Nota"));
 		column4.setPrefWidth(60);
+				tabela.getColumns().add(column1);
+		tabela.getColumns().add(column2);
+		tabela.getColumns().add(column3);
+		tabela.getColumns().add(column4);
+
+
+		tabela.setPrefWidth(470);
+		tabela.setPrefHeight(200);
+		tabela.maxHeight(200);
+		tabela.maxWidth(470);
+		
+		ArrayList<DataAdmin> dataAdmin = DataAdmin.getDataAdmin(ProfEmri);
+		
+		ObservableList<DataAdmin> dataAdminList = FXCollections.observableArrayList();
+		
+		for(int i = 0; i < dataAdmin.size(); i++) {
+			dataAdminList.add(dataAdmin.get(i));
+		}
+		tabela.setItems(dataAdminList);
 	

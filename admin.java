@@ -134,3 +134,14 @@ public void showNota() {
 				ex.printStackTrace();
 			}
 });
+		HBox butonat1 = new HBox();
+//		HBox butonat2 = new HBox();
+		butonat1.getChildren().addAll(btnClear,btnUpdate,btnDelete);
+		butonat1.setSpacing(10);
+//		butonat2.getChildren().addAll(btnDelete,btnUpdate);
+//		butonat2.setSpacing(10);
+		gridpane.addRow(4,butonat1);
+		
+		gridpane.setHgap(10);
+		gridpane.setVgap(10);
+

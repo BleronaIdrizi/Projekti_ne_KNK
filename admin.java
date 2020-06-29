@@ -100,3 +100,37 @@ public void showNota() {
 				preparedStatement.setString(2, lenda.getText());
 
 				ResultSet result = preparedStatement.executeQuery();
+				ResultSet result = preparedStatement.executeQuery();
+				
+				if(result.next())
+				{
+					if(DataAdmin.updateNota(id.getText(), lenda.getText(), Integer.parseInt(nota.getText()))) {
+						showNota();
+					}
+					else
+					{
+						Alert alert = new Alert(AlertType.INFORMATION);
+						alert.setTitle("Unsuccessful");
+						alert.setHeaderText(null);
+						alert.setContentText("Data was NOT updated in DB!");
+						alert.showAndWait();
+					}
+				}
+				else
+				{
+					if(DataAdmin.insertNota(id.getText(), lenda.getText(), Integer.parseInt(ECTS.getText()), ProfEmri, Integer.parseInt(nota.getText()))) {
+						showNota();
+					}
+					else
+					{
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Unsuccessful");
+					alert.setHeaderText(null);
+					alert.setContentText("Student with this ID does not exist!");
+					alert.showAndWait();
+					}
+				}	
+				} catch(SQLException ex) {
+				ex.printStackTrace();
+			}
+});

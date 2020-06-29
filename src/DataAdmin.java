@@ -113,4 +113,23 @@ public class DataAdmin {
 			return false;
 		}
 	}
+	public static ArrayList<DataAdmin> getDataAdmin(String ProfEmri) {
+		ArrayList<DataAdmin> dataAdminList = new ArrayList();
+		
+		try {
+			String query = "Select * from Notat WHERE Profesori = ?";
+			PreparedStatement preparedStatement = Databaza.getConnection().prepareStatement(query);
+			preparedStatement.setString(1, ProfEmri);
+			ResultSet result = preparedStatement.executeQuery();
+			
+			while(result.next()) {
+				DataAdmin dataAdmin = new DataAdmin(result.getString(1), result.getString(2), result.getInt(3), result.getInt(5));
+				dataAdminList.add(dataAdmin);
+			}
+		} catch(SQLException ex) {
+			ex.printStackTrace();
+		}
+		
+		return dataAdminList;
+	}
 }

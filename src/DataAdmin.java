@@ -61,7 +61,22 @@ public class DataAdmin {
 		Nota = nota;
 	}
 	
-	
+	public static boolean updateNota(String Stud_ID, String Lenda, int Nota) {
+		String query = "UPDATE Notat SET Nota=? WHERE Stud_ID=? AND Lenda=?";
+		
+		try {
+			PreparedStatement preparedStatement = Databaza.getConnection().prepareStatement(query);
+			
+			preparedStatement.setInt(1, Nota);
+			preparedStatement.setString(2, Stud_ID);
+			preparedStatement.setString(3, Lenda);
+			
+			return (preparedStatement.executeUpdate() > 0);
+		} catch(SQLException ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
 	
 	
 }

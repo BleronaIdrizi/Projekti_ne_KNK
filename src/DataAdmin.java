@@ -78,5 +78,20 @@ public class DataAdmin {
 		}
 	}
 	
-	
+	public static boolean deleteNota(String Stud_ID, String Lenda) {
+		String query = "DELETE FROM Notat WHERE Stud_ID = ? AND Lenda = ?";
+		
+		try {
+			PreparedStatement preparedStatement = Databaza.getConnection().prepareStatement(query);
+			
+			preparedStatement.setString(1, Stud_ID);
+			preparedStatement.setString(2, Lenda);
+
+
+			return (preparedStatement.executeUpdate() > 0);
+		} catch(SQLException ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
 }

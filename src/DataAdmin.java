@@ -94,4 +94,23 @@ public class DataAdmin {
 			return false;
 		}
 	}
+	public static boolean insertNota(String Stud_ID, String Lenda, int ECTS, String Profesori, int Nota) {
+		String query = "INSERT INTO Notat(Stud_ID, Lenda, ECTS, Profesori, Nota) VALUES(?,?,?,?,?)";
+		
+		try {
+			PreparedStatement preparedStatement = Databaza.getConnection().prepareStatement(query);
+			
+			preparedStatement.setString(1, Stud_ID);
+			preparedStatement.setString(2, Lenda);
+			preparedStatement.setInt(3, ECTS);
+			preparedStatement.setString(4, Profesori);
+			preparedStatement.setInt(5, Nota);
+
+			
+			return (preparedStatement.executeUpdate() > 0);
+		} catch(SQLException ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
 }

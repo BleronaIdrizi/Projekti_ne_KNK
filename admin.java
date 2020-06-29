@@ -144,4 +144,19 @@ public void showNota() {
 		
 		gridpane.setHgap(10);
 		gridpane.setVgap(10);
-
+		TableColumn<String, Data> column1 = new TableColumn<>("Stud_ID");
+		column1.setCellValueFactory(new PropertyValueFactory("Stud_ID"));
+		column1.setPrefWidth(150);
+		
+		TableColumn<String, Data> column2 = new TableColumn<>("Lenda");
+		column2.setCellValueFactory(new PropertyValueFactory("Lenda"));
+		column2.setPrefWidth(200);
+		
+		TableColumn<String, Data> column3 = new TableColumn<>("ECTS");
+		column3.setCellValueFactory(new PropertyValueFactory("ECTS"));
+		column3.setPrefWidth(60);
+		
+		TableColumn<String, Data> column4 = new TableColumn<>("Nota");
+		column4.setCellValueFactory(new PropertyValueFactory("Nota"));
+		column4.setPrefWidth(60);
+	

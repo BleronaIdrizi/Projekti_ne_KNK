@@ -39,3 +39,4 @@ Profesor VARCHAR(20) NOT NULL,
 Nota INT NOT NULL,
 FOREIGN KEY (Nr_ID) REFERENCES Student(Nr_ID),
 FOREIGN KEY (Profesor) REFERENCES Profesor(Profesor));
+

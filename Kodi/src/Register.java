@@ -124,6 +124,25 @@ public class Register extends Application {
         GridPane.setHalignment(submitButton, HPos.CENTER);
         GridPane.setMargin(submitButton, new Insets(20, 100,20,0));
   
+          
+          //clear button
+        Button clearButton = new Button("Clear");
+        clearButton.setPrefSize(100, 40);
+        clearButton.setDefaultButton(true);
+//        clearButton.setPrefWidth(100);
+        gridPane.add(clearButton, 1, 6, 2, 1);
+        GridPane.setHalignment(clearButton, HPos.CENTER);
+        GridPane.setMargin(clearButton, new Insets(20, 0,20,20));
+
+//        class ClearButtonEventHandler implements EventHandler<ActionEvent> {
+        clearButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                nameField.setText("");
+                emailField.setText("");
+                passwordField.setText("");
+            }
+        });
   
 
 

@@ -454,5 +454,42 @@ public class Kryesore extends Application {
 		TableColumn<String, Data> column4 = new TableColumn<>("Nota");
 		column4.setCellValueFactory(new PropertyValueFactory("Nota"));
 		column4.setPrefWidth(60);
-	
+	tabela.getColumns().add(column1);
+		tabela.getColumns().add(column2);
+		tabela.getColumns().add(column3);
+		tabela.getColumns().add(column4);
+
+
+		tabela.setPrefWidth(472);
+		tabela.setPrefHeight(200);
+		tabela.maxHeight(200);
+		tabela.maxWidth(472);
+		
+		
+		ArrayList<Data> data = Data.getData(ID);
+		
+		ObservableList<Data> dataList = FXCollections.observableArrayList();
+		
+		for(int i = 0; i < data.size(); i++) {
+			dataList.add(data.get(i));
+		}
+		tabela.setItems(dataList);
+
+		HBox pane = new HBox(20);
+		
+		pane.getChildren().addAll(gridpane, tabela);
+		pane.setPadding(new Insets(15, 15, 15 ,15));
+
+		Scene scene = new Scene(pane);
+		
+		primaryStage.setTitle("SEMD");
+		primaryStage.setResizable(false);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
+
+}
 		

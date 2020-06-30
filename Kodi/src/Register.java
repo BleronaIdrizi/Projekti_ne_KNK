@@ -83,6 +83,10 @@ public class Register extends Application {
         Label nameLabel = new Label("Full Name : ");
         gridPane.add(nameLabel, 0,1);
           
+          // Add Name Text Field
+        TextField nameField = new TextField();
+        nameField.setPrefHeight(40);
+        gridPane.add(nameField, 1,1);
 
 
     public static void main(String[] args) {

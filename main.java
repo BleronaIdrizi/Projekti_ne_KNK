@@ -268,3 +268,78 @@ public class Kryesore extends Application {
 	        cell.setIndent(20);
 	        cell.setBorder(Rectangle.NO_BORDER);
 	        table.addCell(cell);
+			  //15th row
+	        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+	        Date date = new Date();  
+	        cell = new PdfPCell(new Paragraph(formatter.format(date),fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph(formatter.format(date),fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        //16th row
+	        cell = new PdfPCell(new Paragraph("   Dekani",fontsize));
+	        cell.setFixedHeight(40);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setVerticalAlignment(Element.ALIGN_BOTTOM);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("Rektori \t",fontsize));
+	        cell.setFixedHeight(40);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setVerticalAlignment(Element.ALIGN_BOTTOM);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("_____",fontsize));
+	        cell.setFixedHeight(30);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setVerticalAlignment(Element.ALIGN_BOTTOM);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("_____",fontsize));
+	        cell.setFixedHeight(30);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setVerticalAlignment(Element.ALIGN_BOTTOM);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        
+	        document.add(table);
+
+	         
+	        Image img = Image.getInstance("Foto/Kosovo-logo.png");
+	        img.setAbsolutePosition(70f, 700f);
+	        img.scaleAbsolute(70, 70);
+	        document.add(img);
+	        
+	        img = Image.getInstance("Foto/universiteti-logo.png");
+	        img.setAbsolutePosition(450f, 700f);
+	        img.scaleAbsolute(70, 70);
+	        document.add(img);
+	        img = Image.getInstance("Foto/diploma.png");
+	        img.setAbsolutePosition(228f, 230f);
+	        img.scaleAbsolute(146, 69);
+	        document.add(img);
+	        
+	        document.close();
+
+		}
+		catch (DocumentException e)
+		{
+			e.printStackTrace();
+		}
+		catch (FileNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+	

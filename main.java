@@ -439,4 +439,20 @@ public class Kryesore extends Application {
 		gridpane.setHgap(30);
 		gridpane.setVgap(10);
 		
+		TableColumn<String, Data> column1 = new TableColumn<>("Lenda");
+		column1.setCellValueFactory(new PropertyValueFactory("Lenda"));
+		column1.setPrefWidth(150);
+		
+		TableColumn<String, Data> column2 = new TableColumn<>("ECTS");
+		column2.setCellValueFactory(new PropertyValueFactory("ECTS"));
+		column2.setPrefWidth(60);
+		
+		TableColumn<String, Data> column3 = new TableColumn<>("Profesori");
+		column3.setCellValueFactory(new PropertyValueFactory("Profesori"));
+		column3.setPrefWidth(200);
+		
+		TableColumn<String, Data> column4 = new TableColumn<>("Nota");
+		column4.setCellValueFactory(new PropertyValueFactory("Nota"));
+		column4.setPrefWidth(60);
+	
 		

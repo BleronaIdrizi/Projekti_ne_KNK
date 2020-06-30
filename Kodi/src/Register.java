@@ -70,6 +70,19 @@ public class Register extends Application {
 
         return gridPane;
     }
+    
+      private void addUIControls(GridPane gridPane) {
+        // Add Header
+        Label headerLabel = new Label("Registration Form");
+        headerLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
+        gridPane.add(headerLabel, 0,0,2,1);
+        GridPane.setHalignment(headerLabel, HPos.CENTER);
+        GridPane.setMargin(headerLabel, new Insets(20, 0,20,0));
+
+        // Add Name Label
+        Label nameLabel = new Label("Full Name : ");
+        gridPane.add(nameLabel, 0,1);
+          
 
 
     public static void main(String[] args) {

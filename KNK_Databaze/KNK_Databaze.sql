@@ -3,7 +3,7 @@ CREATE DATABASE DBKNK;
 USE DBKNK;
 
 CREATE TABLE Studenti (
-Student_ID VARCHAR(20),
+Stud_ID VARCHAR(20),
 Emri VARCHAR(50) NOT NULL,
 Mbiemri VARCHAR(50) NOT NULL,
 Fakulteti VARCHAR(50) NOT NULL,
@@ -13,7 +13,7 @@ VendiLindjes VARCHAR(50) NOT NULL,
 MbaroiStudimet VARCHAR(50),
 VitiRegjistrimit VARCHAR(50) NOT NULL,
 Titulli VARCHAR(70) NOT NULL DEFAULT 'Student',
-PRIMARY KEY (Student_ID));
+PRIMARY KEY (Stud_ID));
 
 CREATE TABLE Lendet (
 Lenda VARCHAR(50) NOT NULL,
@@ -30,8 +30,8 @@ PRIMARY KEY (Profesori));
 CREATE TABLE Login (
 Stud_ID VARCHAR(50),
 Stud_Password VARCHAR(50) NOT NULL,
-FOREIGN KEY (Student_ID) REFERENCES Studenti(Student_ID),
-PRIMARY KEY(Student_ID));
+FOREIGN KEY (Stud_ID) REFERENCES Studenti(Stud_ID),
+PRIMARY KEY(Stud_ID));
 
 CREATE TABLE Notat (
 Stud_ID VARCHAR(50) NOT NULL,
@@ -39,31 +39,57 @@ Lenda VARCHAR(50) NOT NULL,
 ECTS INT NOT NULL,
 Profesori VARCHAR(50) NOT NULL,
 Nota INT NOT NULL,
-FOREIGN KEY (Student_ID) REFERENCES Studenti(Student_ID),
+FOREIGN KEY (Stud_ID) REFERENCES Studenti(Stud_ID),
 FOREIGN KEY (Profesori) REFERENCES Profesori(Profesori));
 
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Matematika 1', '7', 'Valdete Hamiti');
+INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Matematika 1', '7', 'Marjan Demaj');
 INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Fizika 1', '6', 'Skender Ahmetaj');
 INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Bazat e Elektroteknikes', '7', 'Luan Ahma');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Qarqe Digjitale', '5', 'Sabrije Osmanaj');
+INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Qarqe Digjitale', '5', 'Agni Dika');
 INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Anglisht', '5', 'Gazmend Pula');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Matematika2', '7', 'Valdete Hamiti');
+INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Matematika2', '7', 'Marjan Dema');
 INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Fizika 2', '6', 'Skender Ahmetaj');
 INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Qarqe Elektrike', '7', 'Luan Ahma');
 INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Algoritmet dhe Struktura e Te Dhenave', '5', 'Avni Rexhepi');
 INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Gjuhe Programuese', '5', 'Avni Rexhepi');
-/*Viti dyte */
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Sinjale dhe Sisteme', '5', 'Vjosa Shatri');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Elektronike', '5', 'Qamil Kabashi');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Matematike 3K', '5', 'Qefsere Gjonbalaj');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Interneti', '5', 'Lule Ahmedi');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Baze e te dhenave', '5', 'Lule Ahmedi');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Programim i orientuar ne objekte', '5', 'Isak Shabani');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Siguri e te dhenave', '5', 'Blerim Rexha');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Rrjeta Kompjuterike', '5', 'Blerim Rexha');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Programimi ne Internet', '5', 'Valon Raca');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Arkitektura e Kompjutereve', '5', 'Valon Raca');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Komunikimi njeri-kompjuter', '5', 'Isak Shabani');
-INSERT INTO `dbknk`.`Lendet` (`Lenda`, `ECTS`, `Profesori`) VALUES ('Menaxhim i Projekteve', '5', 'Sevdije Alshiqi');
 
 
+INSERT INTO `dbknk`.`Profesori` (`Profesori`, `Prof_Password`) VALUES ('Marjan Demaj', '123');
+INSERT INTO `dbknk`.`Profesori` (`Profesori`, `Prof_Password`) VALUES ('Skender Ahmetaj', '123');
+INSERT INTO `dbknk`.`Profesori` (`Profesori`, `Prof_Password`) VALUES ('Luan Ahma', '123');
+INSERT INTO `dbknk`.`Profesori` (`Profesori`, `Prof_Password`) VALUES ('Agni Dika', '123');
+INSERT INTO `dbknk`.`Profesori` (`Profesori`, `Prof_Password`) VALUES ('Gazmend Pula', '123');
+INSERT INTO `dbknk`.`Profesori` (`Profesori`, `Prof_Password`) VALUES ('Avni Rexhepi', '123');
+
+INSERT INTO `dbknk`.`Studenti` (`Stud_ID`, `Emri`, `Mbiemri`, `Fakulteti`, `Departamenti`, `VitiLindjes`, `VendiLindjes`, `MbaroiStudimet`, `VitiRegjistrimit`, `Titulli`) VALUES ('180714100002', 'Vigan', 'Abdurrahimi', 'Fakulteti i Inxhinierise Elektrike Dhe Kompjuterike', 'Inxhinieri Kompjuterike', '05-03-1998', 'Prishtine', '2019', '01-10-2016', 'Bachelor i Inxhinierise Elektrike Dhe Kompjuterike');
+INSERT INTO `dbknk`.`Studenti` (`Stud_ID`, `Emri`, `Mbiemri`, `Fakulteti`, `Departamenti`, `VitiLindjes`, `VendiLindjes`, `MbaroiStudimet`, `VitiRegjistrimit`, `Titulli`) VALUES ('180714100099', 'Isak', 'Shabani', 'Fakulteti i Inxhinierise Elektrike Dhe Kompjuterike', 'Inxhinieri Kompjuterike', '26-03-1998', 'Prishtine', '', '01-10-2016', 'Student');
+
+INSERT INTO `dbknk`.`Login` (`Stud_ID`, `Stud_Password`) VALUES ('180714100002', '123');
+INSERT INTO `dbknk`.`Login` (`Stud_ID`, `Stud_Password`) VALUES ('180714100099', '123');
+
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100002', 'Matematika 1', '7', 'Marjan Demaj', '8');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100002', 'Fizika 1', '6', 'Skender Ahmetaj', '6');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100002', 'Bazat e Elektroteknikes', '7', 'Luan Ahma', '8');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100002', 'Matematika 2', '7', 'Marjan Demaj', '8');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100002', 'Fizika 2', '6', 'Skender Ahmetaj', '6');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100002', 'Gjuhe Programuese', '5', 'Avni Rexhepi', '8');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100002', 'Algoritmet dhe Strukturat e te Dhenave', '5', 'Avni Rexhepi', '6');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100002', 'Qarqe Digjitale', '5', 'Agni Dika', '8');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100002', 'Gjuhe Angleze', '5', 'Gazmend Pula', '8');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100002', 'Qarqe Elektrike', '7', 'Luan Ahma', '6');
+
+
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100099', 'Matematika 1', '7', 'Marjan Demaj', '9');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100099', 'Matematika 2', '7', 'Marjan Demaj', '9');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100099', 'Gjuhe Programuese', '5', 'Avni Rexhepi', '9');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100099', 'Fizika 2', '6', 'Skender Ahmetaj', '8');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100099', 'Algoritmet dhe Strukturat e te Dhenave', '5', 'Avni Rexhepi', '8');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100099', 'Gjuhe Angleze', '5', 'Gazmend Pula', '8');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100099', 'Qarqe Elektrike', '7', 'Luan Ahma', '7');
+INSERT INTO `dbknk`.`Notat` (`Stud_ID`, `Lenda`, `ECTS`, `Profesori`, `Nota`) VALUES ('180714100099', 'Bazat e Elektroteknikes', '7', 'Luan Ahma', '8');
+
+Select * from Notat;
+
+SELECT * FROM Studenti WHERE Stud_ID = "180714100002";
+
+Select * from Notat WHERE Profesori = "Marjan Demaj";

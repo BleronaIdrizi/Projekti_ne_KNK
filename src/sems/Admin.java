@@ -1,4 +1,4 @@
-package smtd;
+package sems;
 
 import javafx.application.Application;
 import java.sql.Connection;

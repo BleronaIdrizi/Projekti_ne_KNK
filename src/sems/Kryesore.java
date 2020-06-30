@@ -1,4 +1,4 @@
-package smtd;
+package sems;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

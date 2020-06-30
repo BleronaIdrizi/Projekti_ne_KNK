@@ -1,4 +1,4 @@
-package smtd;
+package sems;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.Connection;

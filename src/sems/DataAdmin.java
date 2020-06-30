@@ -1,4 +1,4 @@
-package smtd;
+package sems;
 
 import java.awt.List;
 import java.sql.PreparedStatement;

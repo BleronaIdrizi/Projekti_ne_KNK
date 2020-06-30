@@ -1,4 +1,4 @@
-package smtd;
+package sems;
 
 import java.sql.*;
 

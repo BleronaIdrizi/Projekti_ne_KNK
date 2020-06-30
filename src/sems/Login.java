@@ -69,8 +69,8 @@ public class Login extends Application {
 
 				if(result.next())
 				{
-					//Kryesore kryesore = new Kryesore(txtUser.getText());
-					//kryesore.start(stage);
+					Kryesore kryesore = new Kryesore(txtUser.getText());
+					kryesore.start(stage);
 				}
 				else {
 				Alert alert = new Alert(AlertType.INFORMATION);
@@ -135,7 +135,7 @@ public class Login extends Application {
 		
 		Scene scene = new Scene(pane);
 		stage.setResizable(false);
-		stage.setTitle("SEMD"); 
+		stage.setTitle("SEMS"); 
 		stage.setScene(scene); 
 		stage.show();
 		

@@ -63,7 +63,7 @@ public class Kryesore extends Application {
 
 		try
 		{
-			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("C://Users//OS//Desktop/"+Emri+"_"+Mbiemri+".pdf"));
+			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("C://Users//Lenovo//Desktop//Blerona//"+Emri+"_"+Mbiemri+".pdf"));
 	        document.open();
 	        PdfPTable table = new PdfPTable(2);
 	        table.setTotalWidth(new float[]{ 240, 260 });

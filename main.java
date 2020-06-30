@@ -141,4 +141,130 @@ public class Kryesore extends Application {
 	        cell.setBorder(Rectangle.NO_BORDER);
 	        table.addCell(cell);
 	
-	        
+	        //5th row
+	        fontsize = FontFactory.getFont(FontFactory.COURIER,55);
+	        cell = new PdfPCell(new Paragraph("DIPLOME",fontsize));
+	        cell.setFixedHeight(80);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setVerticalAlignment(Element.ALIGN_CENTER);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("DIPLOMA",fontsize));
+	        cell.setFixedHeight(80);
+	        cell.setIndent(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setVerticalAlignment(Element.ALIGN_CENTER);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        //6th row
+	        fontsize = FontFactory.getFont(FontFactory.HELVETICA_BOLD,20);
+	        cell = new PdfPCell(new Paragraph(Emri+" "+Mbiemri,fontsize));
+	        cell.setFixedHeight(30);
+	        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+	        cell.setVerticalAlignment(Element.ALIGN_CENTER);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        cell.setColspan(2);
+	        table.addCell(cell);
+	        //7th row
+	        fontsize = FontFactory.getFont(FontFactory.HELVETICA,8);
+	        cell = new PdfPCell(new Paragraph("U lind me "+VitiLindjes+" ne "+VendiLindjes,fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("Born on "+VitiLindjes+" in "+VendiLindjes,fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        //8th row
+
+	        //9th row
+	        cell = new PdfPCell(new Paragraph("U regjistrua ne vitin akademik "+VitiRegjistrimit,fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("Was enrolled in the academic year "+VitiRegjistrimit,fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        //10th row
+	        cell = new PdfPCell(new Paragraph("Studimet i mbaroi me "+MbaroiStudimet,fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("Completed his/her studies on "+MbaroiStudimet,fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+			//10th row
+	        cell = new PdfPCell(new Paragraph(Departamenti,fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph(Departamenti,fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        //11th row
+	        cell = new PdfPCell(new Paragraph("dhe mori titullin:",fontsize));
+	        cell.setFixedHeight(30);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setVerticalAlignment(Element.ALIGN_BOTTOM);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("and was awarded with this title:",fontsize));
+	        cell.setFixedHeight(30);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setVerticalAlignment(Element.ALIGN_BOTTOM);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        //12th row
+	        cell = new PdfPCell(new Paragraph(Titulli,fontsize));
+	        cell.setFixedHeight(30);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setVerticalAlignment(Element.ALIGN_TOP);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph(Titulli,fontsize));
+	        cell.setFixedHeight(30);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setVerticalAlignment(Element.ALIGN_TOP);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        //13th row
+	        cell = new PdfPCell(new Paragraph("Gjithsej "+ECTSTotal+" - ECTS",fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("Total "+ECTSTotal+" - ECTS",fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        //14th row
+	        cell = new PdfPCell(new Paragraph("Nota mesatare gjate studimeve "+NotaMesatare,fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("Average grade of studies "+NotaMesatare,fontsize));
+	        cell.setFixedHeight(20);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);

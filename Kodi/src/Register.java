@@ -104,6 +104,17 @@ public class Register extends Application {
         CheckBox pythonCheckBox = new CheckBox("Python");
         gridPane.add(languagesLabel, 0, 4);
         gridPane.add(new HBox(15, javaCheckBox, cppCheckBox, csharpCheckBox,pythonCheckBox ), 1, 4, 2, 1);
+          
+          //radiobutton
+        Label workingLabel = new Label("Gender:");
+        ToggleGroup workinGroup = new ToggleGroup();
+        ToggleButton MaleToggleButton = new ToggleButton("Male");
+        ToggleButton FemaleToggleButton = new ToggleButton("Female");
+        MaleToggleButton.setToggleGroup(workinGroup);
+        FemaleToggleButton.setToggleGroup(workinGroup);
+        gridPane.add(workingLabel, 0, 5);
+        gridPane.add(new HBox(15, MaleToggleButton, FemaleToggleButton), 1, 5, 2, 1);
+  
 
 
     public static void main(String[] args) {

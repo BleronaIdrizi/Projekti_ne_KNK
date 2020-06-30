@@ -60,7 +60,6 @@ public class DataAdmin {
 	public void setNota(int nota) {
 		Nota = nota;
 	}
-	
 	public static boolean updateNota(String Stud_ID, String Lenda, int Nota) {
 		String query = "UPDATE Notat SET Nota=? WHERE Stud_ID=? AND Lenda=?";
 		

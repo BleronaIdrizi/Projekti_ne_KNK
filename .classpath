@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_251/lib/ext/jfxrt.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/MySQL/mysql-connector-java-5.1.49/mysql-connector-java-5.1.49-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/iText7/itext-5.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/iText7/itextpdf-5.5.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/javafx.base.jar" sourcepath="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/src.zip"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/javafx.controls.jar" sourcepath="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/src.zip"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/javafx.fxml.jar" sourcepath="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/src.zip"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/javafx.graphics.jar" sourcepath="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/src.zip"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/javafx.media.jar" sourcepath="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/src.zip"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/javafx.swing.jar" sourcepath="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/src.zip"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/javafx.web.jar" sourcepath="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/src.zip"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/javafx-swt.jar" sourcepath="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/src.zip"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/eclipse/javafx-sdk-11.0.2/lib/src.zip"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

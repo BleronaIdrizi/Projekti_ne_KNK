@@ -342,4 +342,83 @@ public class Kryesore extends Application {
 		}
 
 	}
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		
+		try
+		{
+			String query = "SELECT AVG(Nota) FROM Notat WHERE Stud_ID = ?";
+	
+			PreparedStatement preparedStatement = Databaza.getConnection().prepareStatement(query);
+			preparedStatement.setString(1, ID);
+	
+			ResultSet result = preparedStatement.executeQuery();
+			result.next();
+			
+			NotaMesatare = result.getString(1);
+			
+			query = "SELECT SUM(ECTS) FROM Notat WHERE Stud_ID = ?";
+			preparedStatement = Databaza.getConnection().prepareStatement(query);
+			preparedStatement.setString(1, ID);
+			result = preparedStatement.executeQuery();
+			result.next();
+			
+			ECTSTotal = result.getInt(1);
+		
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+
+		//Popullimi i tabeles me te dhena
+		try {
+			String query = "SELECT * FROM Studenti WHERE Stud_ID = ?";
+
+			PreparedStatement preparedStatement = Databaza.getConnection().prepareStatement(query);
+			preparedStatement.setString(1, ID);
+
+			ResultSet result = preparedStatement.executeQuery();
+			while (result.next())
+			{
+				Emri = result.getString("Emri");
+				Mbiemri = result.getString("Mbiemri");
+				Fakulteti = result.getString("Fakulteti");
+				Departamenti = result.getString("Departamenti");
+				VitiRegjistrimit = result.getString("VitiRegjistrimit");
+				VendiLindjes = result.getString("VendiLindjes");
+				VitiLindjes = result.getString("VitiLindjes");
+				MbaroiStudimet = result.getString("MbaroiStudimet");
+				Titulli = result.getString("Titulli");
+				
+
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		Button apliko = new Button("Apliko");
+		
+		apliko.setOnAction( e -> {
+			try {
+				if(ECTSTotal == 60)
+					{
+					aplikimi();
+					}
+					else
+					{
+						Alert alert = new Alert(AlertType.INFORMATION);
+						alert.setTitle("Aplikimi Result");
+						alert.setHeaderText(null);
+						alert.setContentText("You don't have enough ECTS credits to do this!");
+						alert.showAndWait();
+					}
+				}
+			catch (Exception e1)
+			{
+				e1.printStackTrace();
+			}
+		});
+		
 	

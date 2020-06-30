@@ -40,13 +40,24 @@ Nota INT NOT NULL,
 FOREIGN KEY (Nr_ID) REFERENCES Student(Nr_ID),
 FOREIGN KEY (Profesor) REFERENCES Profesor(Profesor));
 
-CREATE TABLE Viti (
+CREATE TABLE Vit (
+Viti VARCHAR(30) NOT NULL,
 Nr_ID VARCHAR(50) NOT NULL,
 Lenda VARCHAR(30) NOT NULL,
 ECTS INT NOT NULL,
 Profesor VARCHAR(20) NOT NULL,
-Vit INT NOT NULL,
 FOREIGN KEY (Nr_ID) REFERENCES Student(Nr_ID),
 FOREIGN KEY (Notat) REFERENCES Notat(Notat),
 FOREIGN KEY (Profesor) REFERENCES Profesor(Profesor));
+
+INSERT INTO `KNK_Databaze`.`Lendet` (`Viti`,`Lenda`, `ECTS`, `Profesor`) VALUES ('1','Matematika 1', '8', 'Valdete Hamiti');
+INSERT INTO `KNK_Databaze`.`Lendet` (`Viti`,`Lenda`, `ECTS`, `Profesor`) VALUES ('1','Bazat e Elektroteknikes', '8', 'Luan Ahma');
+INSERT INTO `KNK_Databaze`.`Lendet` (`Viti`,`Lenda`, `ECTS`, `Profesor`) VALUES ('1','Fizika 1', '9', 'Skender Ahmetaj');
+INSERT INTO `KNK_Databaze`.`Lendet` (`Viti`,`Lenda`, `ECTS`, `Profesor`) VALUES ('1','Gjuhe Programuese', '8', 'Avni Rexhepi');
+INSERT INTO `KNK_Databaze`.`Lendet` (`Viti`,`Lenda`, `ECTS`, `Profesor`) VALUES ('1','Qarqe Digjitale', '7', 'Sabrije Osmanaj');
+INSERT INTO `KNK_Databaze`.`Lendet` (`Viti`,`Lenda`, `ECTS`, `Profesor`) VALUES ('1','Anglisht', '9', 'Gazmend Pula');
+INSERT INTO `KNK_Databaze`.`Lendet` (`Viti`,`Lenda`, `ECTS`, `Profesor`) VALUES ('1','Matematika 2', '7', 'Valdete Hamiti');
+INSERT INTO `KNK_Databaze`.`Lendet` (`Viti`,`Lenda`, `ECTS`, `Profesor`) VALUES ('1','Fizika 2', '8', 'Skender Ahmetaj');
+INSERT INTO `KNK_Databaze`.`Lendet` (`Viti`,`Lenda`, `ECTS`, `Profesor`) VALUES ('1','Qarqe Elektrike', '7', 'Luan Ahma');
+INSERT INTO `KNK_Databaze`.`Lendet` (`Viti`,`Lenda`, `ECTS`, `Profesor`) VALUES ('1','Algoritmet dhe Struktura e Te Dhenave', '9', 'Avni Rexhepi');
 

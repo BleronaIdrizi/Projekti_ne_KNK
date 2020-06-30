@@ -87,6 +87,23 @@ public class Register extends Application {
         TextField nameField = new TextField();
         nameField.setPrefHeight(40);
         gridPane.add(nameField, 1,1);
+     
+           // Add Password Label
+        Label passwordLabel = new Label("Password : ");
+        gridPane.add(passwordLabel, 0, 3);
+
+        // Add Password Field
+        PasswordField passwordField = new PasswordField();
+        passwordField.setPrefHeight(40);
+        gridPane.add(passwordField, 1, 3);
+        //language
+        Label languagesLabel = new Label("Known languages:");
+        CheckBox javaCheckBox = new CheckBox("Java");
+        CheckBox cppCheckBox = new CheckBox("C++");
+        CheckBox csharpCheckBox = new CheckBox("C#");
+        CheckBox pythonCheckBox = new CheckBox("Python");
+        gridPane.add(languagesLabel, 0, 4);
+        gridPane.add(new HBox(15, javaCheckBox, cppCheckBox, csharpCheckBox,pythonCheckBox ), 1, 4, 2, 1);
 
 
     public static void main(String[] args) {

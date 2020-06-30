@@ -421,4 +421,22 @@ public class Kryesore extends Application {
 			}
 		});
 		
-	
+	GridPane gridpane = new GridPane();
+		
+		gridpane.addRow(1, new Label("Emri: "), new Label(Emri));
+		gridpane.addRow(2, new Label("Mbiemri: "), new Label(Mbiemri));
+		gridpane.addRow(3, new Label("Vendi i Lindjes: "), new Label(VendiLindjes));
+		gridpane.addRow(4, new Label("Viti i Lindjes: "), new Label(VitiLindjes));
+		gridpane.addRow(5, new Label("Viti i Regjistrimit: "), new Label(VitiRegjistrimit));
+		gridpane.addRow(6, new Label("Fakulteti: "), new Label(Fakulteti));
+		gridpane.addRow(7, new Label("Departamenti: "), new Label(Departamenti));
+		gridpane.addRow(8, new Label("Mbaroi Studimet: "), new Label(MbaroiStudimet));
+		gridpane.addRow(9, new Label("Titulli: "), new Label(Titulli));
+		gridpane.addRow(10, new Label("Nota Mesatare: "), new Label(NotaMesatare));
+
+
+		gridpane.addRow(11, apliko);
+		gridpane.setHgap(30);
+		gridpane.setVgap(10);
+		
+		

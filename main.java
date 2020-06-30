@@ -50,3 +50,56 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+public class Kryesore extends Application {
+	String Emri;
+	String Mbiemri;
+	String Fakulteti;
+	String Departamenti;
+	String ID;
+	String VitiRegjistrimit;
+	String VitiLindjes;
+	String VendiLindjes;
+	String MbaroiStudimet;
+	String Titulli;
+	String NotaMesatare;
+	int ECTSTotal;
+	
+	private TableView tabela = new TableView();
+	
+	public Kryesore(String rezultati) {
+		this.ID = rezultati;
+	}
+	public void aplikimi()
+	{
+		Document document = new Document();
+
+		try
+		{
+			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("C://Users//OS//Desktop/"+Emri+"_"+Mbiemri+".pdf"));
+	        document.open();
+	        PdfPTable table = new PdfPTable(2);
+	        table.setTotalWidth(new float[]{ 240, 260 });
+	        table.setLockedWidth(true);
+	        PdfContentByte cb = writer.getDirectContent();
+	        
+	        Font fontsize = FontFactory.getFont(FontFactory.HELVETICA,10);
+
+	        PdfPCell cell = new PdfPCell();
+	        cell.setFixedHeight(35);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        cell.setColspan(2);
+	        table.addCell(cell);
+	        // first row
+	        cell = new PdfPCell(new Paragraph("Republika e Kosoves",fontsize));
+	        cell.setFixedHeight(25);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("Republic of Kosovo",fontsize));
+	        cell.setFixedHeight(25);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        

@@ -102,4 +102,43 @@ public class Kryesore extends Application {
 	        cell.setIndent(20);
 	        cell.setBorder(Rectangle.NO_BORDER);
 	        table.addCell(cell);
+			        // second row
+	        cell = new PdfPCell(new Paragraph("Universiteti i Prishtines",fontsize));
+	        cell.setFixedHeight(25);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("University of Prishtina",fontsize));
+	        cell.setFixedHeight(25);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        // third row
+	        cell = new PdfPCell(new Paragraph("\"Hasan Prishtina\"",fontsize));
+	        cell.setFixedHeight(25);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph("\"Hasan Prishtina\"",fontsize));
+	        cell.setFixedHeight(25);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        //4th row
+	        cell = new PdfPCell(new Paragraph(Fakulteti,fontsize));
+	        cell.setFixedHeight(40);
+	        cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+	        cell.setVerticalAlignment(Element.ALIGN_BOTTOM);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	        cell = new PdfPCell(new Paragraph(Fakulteti,fontsize));
+	        cell.setFixedHeight(40);
+	        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+	        cell.setVerticalAlignment(Element.ALIGN_BOTTOM);
+	        cell.setIndent(20);
+	        cell.setBorder(Rectangle.NO_BORDER);
+	        table.addCell(cell);
+	
 	        

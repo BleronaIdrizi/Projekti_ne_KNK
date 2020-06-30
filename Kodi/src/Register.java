@@ -70,8 +70,8 @@ public class Register extends Application {
 
         return gridPane;
     }
-    
-      private void addUIControls(GridPane gridPane) {
+
+    private void addUIControls(GridPane gridPane) {
         // Add Header
         Label headerLabel = new Label("Registration Form");
         headerLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
@@ -82,13 +82,23 @@ public class Register extends Application {
         // Add Name Label
         Label nameLabel = new Label("Full Name : ");
         gridPane.add(nameLabel, 0,1);
-          
-          // Add Name Text Field
+
+        // Add Name Text Field
         TextField nameField = new TextField();
         nameField.setPrefHeight(40);
         gridPane.add(nameField, 1,1);
-     
-           // Add Password Label
+
+
+        // Add Email Label
+        Label emailLabel = new Label("Email ID : ");
+        gridPane.add(emailLabel, 0, 2);
+
+        // Add Email Text Field
+        TextField emailField = new TextField();
+        emailField.setPrefHeight(40);
+        gridPane.add(emailField, 1, 2);
+
+        // Add Password Label
         Label passwordLabel = new Label("Password : ");
         gridPane.add(passwordLabel, 0, 3);
 
@@ -104,8 +114,8 @@ public class Register extends Application {
         CheckBox pythonCheckBox = new CheckBox("Python");
         gridPane.add(languagesLabel, 0, 4);
         gridPane.add(new HBox(15, javaCheckBox, cppCheckBox, csharpCheckBox,pythonCheckBox ), 1, 4, 2, 1);
-          
-          //radiobutton
+
+        //radiobutton
         Label workingLabel = new Label("Gender:");
         ToggleGroup workinGroup = new ToggleGroup();
         ToggleButton MaleToggleButton = new ToggleButton("Male");
@@ -114,8 +124,8 @@ public class Register extends Application {
         FemaleToggleButton.setToggleGroup(workinGroup);
         gridPane.add(workingLabel, 0, 5);
         gridPane.add(new HBox(15, MaleToggleButton, FemaleToggleButton), 1, 5, 2, 1);
-          
-                // Add Submit Button
+
+        // Add Submit Button
         Button submitButton = new Button("Submit");
         submitButton.setPrefHeight(40);
         submitButton.setDefaultButton(true);
@@ -123,9 +133,8 @@ public class Register extends Application {
         gridPane.add(submitButton, 0, 6, 2, 1);
         GridPane.setHalignment(submitButton, HPos.CENTER);
         GridPane.setMargin(submitButton, new Insets(20, 100,20,0));
-  
-          
-          //clear button
+
+        //clear button
         Button clearButton = new Button("Clear");
         clearButton.setPrefSize(100, 40);
         clearButton.setDefaultButton(true);
@@ -143,8 +152,9 @@ public class Register extends Application {
                 passwordField.setText("");
             }
         });
-          
-           submitButton.setOnAction(new EventHandler<ActionEvent>() {
+
+
+        submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 if(nameField.getText().isEmpty()) {
@@ -165,9 +175,18 @@ public class Register extends Application {
         });
     }
 
-    public static ComboBox<String> languageCB = new ComboBox<String>(FXCollections.observableArrayList("AL", "EN"));
-  
-  private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+//    submitButton.setOnAction(e -> {
+//
+//    }
+
+//    EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
+//        public void handle(ActionEvent e)
+//        {
+//            l.setText(b.getText());
+//        }
+//    };
+//
+    private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setHeaderText(null);
@@ -179,5 +198,5 @@ public class Register extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-}
+   }
 

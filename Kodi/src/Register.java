@@ -114,6 +114,16 @@ public class Register extends Application {
         FemaleToggleButton.setToggleGroup(workinGroup);
         gridPane.add(workingLabel, 0, 5);
         gridPane.add(new HBox(15, MaleToggleButton, FemaleToggleButton), 1, 5, 2, 1);
+          
+                // Add Submit Button
+        Button submitButton = new Button("Submit");
+        submitButton.setPrefHeight(40);
+        submitButton.setDefaultButton(true);
+        submitButton.setPrefWidth(100);
+        gridPane.add(submitButton, 0, 6, 2, 1);
+        GridPane.setHalignment(submitButton, HPos.CENTER);
+        GridPane.setMargin(submitButton, new Insets(20, 100,20,0));
+  
   
 
 
